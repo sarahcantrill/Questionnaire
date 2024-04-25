@@ -1,10 +1,24 @@
-paths:
-    tests: tests
-    output: tests/_output
-    data: tests/_data
-    support: tests/_support
-    envs: tests/_envs
-actor_suffix: Tester
-extensions:
-    enabled:
-        - Codeception\Extension\RunFailed
+actor: Tester
+  paths:
+      tests: tests
+      log: tests/_output
+      data: tests/_data
+      support: tests/_support
+      envs: tests/_envs
+  settings:
+      bootstrap: _bootstrap.php
+      colors: true
+      memory_limit: 1024M
+  extensions:
+      enabled:
+          - Codeception\Extension\RunFailed
+  modules:
+      config:
+          Db:
+              dsn: 'mysql:172.18.0.2;dbname=questionnaire'
+              user: 'root'
+              password: 'password'
+              dump: tests/_data/dumpseeded.sql
+              populate: true
+              cleanup: false
+              reconnect: true

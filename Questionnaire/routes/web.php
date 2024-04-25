@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
+
+//Route::resource('/admin/questionnaire', 'QuestionnaireController' );
