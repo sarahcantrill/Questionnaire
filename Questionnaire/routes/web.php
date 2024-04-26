@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
+Route::resource('questionnaires', 'QuestionnaireController');
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );

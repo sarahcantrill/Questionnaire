@@ -74,7 +74,7 @@
 
                 <div class="links">
                     <a href="/workspace/laravel-6/Questionnaire/Questionnaire/resources/views/welcome.blade.php">Take the Questionnaire!</a>
-                    <a href= "/workspace/laravel-6/Questionnaire/Questionnaire/resources/views/createquestionnaire.blade.php">Create a Questionnaire!</a>
+                    <a href= "{{ route('questionnaires.create') }}">Create a Questionnaire!</a>
                 </div>
             </div>
         </div>
