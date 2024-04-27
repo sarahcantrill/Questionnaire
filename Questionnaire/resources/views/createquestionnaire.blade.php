@@ -26,37 +26,37 @@
           {!! Form::open() !!}
 
             <div class="form-group">
-                {!! Form::label('question1', 'Question 1:') !!}
+                {!! Form::label('question1', 'Question 1:') !!} <br>
                 {!! Form::text('question1', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('question2', 'Question 2:') !!}
+                {!! Form::label('question2', 'Question 2:') !!}<br>
                 {!! Form::text('question2', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('question3', 'Question 3:') !!}
+                {!! Form::label('question3', 'Question 3:') !!}<br>
                 {!! Form::text('question3', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('question4', 'Question 4:') !!}
+                {!! Form::label('question4', 'Question 4:') !!}<br>
                 {!! Form::text('question4', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('question5', 'Question 5:') !!}
+                {!! Form::label('question5', 'Question 5:') !!}<br>
                 {!! Form::text('question5', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('stars', 'Star rating:') !!}
-                {!! Form::select('stars', array('1' => '*', '2' => '**', '3' => '***', '4' => '****', '5' => '*****'), null,['placeholder' => 'Select...']) !!}
+                {!! Form::label('rating', 'Difficulty Rating:') !!}
+                {!! Form::select('stars', array('1' => 'Very Easy', '2' => 'Easy', '3' => 'Neutral', '4' => 'Difficult', '5' => 'Very Difficult'), null,['placeholder' => 'Select...']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Add Questionnaire', ['class' => 'btn btn-primary form-control']) !!}
+                {!! Form::submit('Add Questionnaire !', ['class' => 'btn btn-primary form-control']) !!}
             </div
 
           {!! Form::close() !!}
