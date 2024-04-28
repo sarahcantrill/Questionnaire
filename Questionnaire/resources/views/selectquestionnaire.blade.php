@@ -15,11 +15,27 @@
 
 
           <!-- form goes here -->
-          {!! Form::open() !!}
-            
-            
+          @section('content')
+                <h1>Welcome to Select Questionnaires</h1>
 
-          {!! Form::close() !!}
+                @if ($questionnaires->isEmpty())
+                    <p>No select questionnaires found.</p>
+                @else
+                    <ul>
+                        @foreach ($questionnaires as $questionnaire)
+                            <li>
+                                <a href="{{ route('select.questionnaires.show', $questionnaire->id) }}">
+                                    {{ $questionnaire->title }}
+                                </a>
+                                <form action="{{ route('select.questionnaires.take', $questionnaire->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit">Take Questionnaire</button>
+                                </form>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            @endsection
 
 
       </article>

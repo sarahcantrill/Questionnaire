@@ -3,9 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Questionnaire;
 
 class SelectQuestionnaireController extends Controller
 {
+    /**
+     * Display all questionnaires.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAll()
+    {
+        // Fetch all questionnaires from the database
+        $questionnaires = Questionnaire::all();
+
+        // Return a view to display all questionnaires
+        return view('all_questionnaires', ['questionnaires' => $questionnaires]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +37,7 @@ class SelectQuestionnaireController extends Controller
      */
     public function create()
     {
-        //
+        return view('selectquestionnaire');
     }
 
     /**

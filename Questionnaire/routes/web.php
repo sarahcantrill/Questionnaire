@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//create questionnaire route
 Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
 Route::resource('questionnaires', 'QuestionnaireController');
+
+//select questionnaire route
+//Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
+//Route::resource('questionnaires', 'QuestionnaireController');
+Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
+Route::get('/show-all-questionnaires', [QuestionnaireController::class, 'showAll'])->name('questionnaires.showAll');
+
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );
