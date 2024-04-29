@@ -12,9 +12,10 @@ class QuestionnaireSeeder extends Seeder
     public function run()
     {
         DB::table('questionnaire')->insert([
-                ['id' => 1, 'title' => 'Questionnaire 1'],
-                ['id' => 2, 'title' => 'Questionnaire 2'],
-                ['id' => 3, 'title' => 'Questionnaire 3'],
+                ['title' => 'Questionnaire 1'],
+                ['title' => 'Questionnaire 2'],
+                ['title' => 'Questionnaire 3'],
+                
             ]);
 
 
