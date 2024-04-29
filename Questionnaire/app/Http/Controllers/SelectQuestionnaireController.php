@@ -3,24 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Questionnaire;
-//use App\Questionnaire;
+use Illuminate\Support\Facades\DB;
+
 
 class SelectQuestionnaireController extends Controller
 {
-    /**
-     * Display all questionnaires.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showAll()
-    {
-        // Fetch all questionnaires from the database
-        $questionnaires = Questionnaire::all();
-
-        // Return a view to display all questionnaires
-        return view('all_questionnaires', ['questionnaires' => $questionnaires]);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -31,10 +20,14 @@ class SelectQuestionnaireController extends Controller
         //get all the questionnaires 
         //$questionnaires = Questionnaire::all();
 
-        //return view('createquestionnaire', ['questionnaires' => $questionnaires]);
-        $questionnaires = Questionnaire::all();
-        return view('selectquestionnaire', ['questionnaires' => $questionnaires]);
+       // return view('selectquestionnaire', ['questionnaire' => $questionnaire]);
+      //  $questionnaire = Questionnaire::all();
+        //return view('selectquestionnaire', ['questionnaire' => $questionnaire]);
+ 
 
+        $questionnaires = DB::table('questionnaire')->get();
+
+        return view('selectquestionnaire')-> with('questionnaires', $questionnaires);
     }
 
     /**
@@ -55,7 +48,11 @@ class SelectQuestionnaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        results::create($input);
+
+        return redirect ('quiz');
     }
 
     /**

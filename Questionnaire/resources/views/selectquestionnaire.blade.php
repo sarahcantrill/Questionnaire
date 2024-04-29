@@ -12,36 +12,10 @@
       <article class="row">
           <h1>Select a Questionnaire:</h1>
 
-
-
-          <!-- form goes here -->
-          @section('content')
-                <h1>Welcome to Select Questionnaires</h1>
-
-                @if ($questionnaires->isEmpty())
-                    <p>No select questionnaires found.</p>
-                @else
-                    <ul>
-                       <!-- @foreach ($questionnaires as $questionnaire)
-                            <li>
-                                <a href="{{ route('select.questionnaires.show', $questionnaire->id) }}">
-                                    {{ $questionnaire->title }}
-                                </a>
-                                <form action="{{ route('select.questionnaires.take', $questionnaire->id) }}" method="POST">
-                                    @csrf
-                                    <button type="submit">Take Questionnaire</button>
-                                </form>
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            @endsection-->
             @foreach($questionnaires as $questionnaire)
-                <div>
-                    <h3>{{ $questionnaire->title }}</h3>
-                    <p>{{ $questionnaire->description }}</p>
-                    <a href="{{ route('questionnaires.show', ['questionnaire' => $questionnaire->id]) }}">Select Questionnaire</a>
-                </div>
+                <p> ID: {{ $questionnaire->id }}</p>
+                <p> {{ $questionnaire->title }}</p>
+                
             @endforeach
 
       </article>
