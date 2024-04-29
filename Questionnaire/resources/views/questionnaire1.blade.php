@@ -26,11 +26,10 @@
                         </div>
 
                         <div class="all-questions">
-                            <label for="question_2" class="question_2"><b>{{ __('Question 2') }}</b></label><!-- long text question -->
-                                <p>How was your holiday?</p>
+                            <label for="question_2" class="question_2"><b>{{ __('Question 2') }}</b></label><!-- short text question -->
+                                <p>Where was your holiday?</p>
                             <div class="col-md-6">
-                                <textarea id="question_2" type="text" class="question_2 @error('question_2') is-invalid @enderror" name="question_2  required maxlength="100" required autocomplete="cquestion_2" autofocus>{{ old('question_2') }}</textarea>
-
+                            <input id="question_2" type="text" class="question_2 @error('question_2') is-invalid @enderror" name="question_2" value="{{ old('question_2') }}" required maxlength="20" required autocomplete="question_2" autofocus>
                                 @error('question_2')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

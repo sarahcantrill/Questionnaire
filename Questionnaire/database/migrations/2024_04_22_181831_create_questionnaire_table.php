@@ -15,11 +15,8 @@ class CreateQuestionnaireTable extends Migration
     {
             Schema::create('questionnaire', function (Blueprint $table) {
                 $table->bigIncrements('id');
-                $table->unsignedBigInteger('questionnaire_id'); // Foreign key to relate to questionnaires table
-                $table->string('text');
+                $table->string('title');
                 $table->timestamps();
-    
-                $table->foreign('questionnaire_id')->references('id')->on('questionnaires')->onDelete('cascade');
             
         });
     }
