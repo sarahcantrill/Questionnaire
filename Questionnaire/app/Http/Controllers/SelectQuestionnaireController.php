@@ -27,7 +27,10 @@ class SelectQuestionnaireController extends Controller
      */
     public function index()
     {
-        //
+        //get all the questionnaires 
+        $questionnaires = Questionnaire::all();
+
+        return view('createquestionnaire', ['questionnaires' => $questionnaires]);
     }
 
     /**
@@ -37,7 +40,7 @@ class SelectQuestionnaireController extends Controller
      */
     public function create()
     {
-        return view('selectquestionnaire');
+         return view('selectquestionnaire');
     }
 
     /**

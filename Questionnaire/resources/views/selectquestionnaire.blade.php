@@ -22,7 +22,7 @@
                     <p>No select questionnaires found.</p>
                 @else
                     <ul>
-                        @foreach ($questionnaires as $questionnaire)
+                       <!-- @foreach ($questionnaires as $questionnaire)
                             <li>
                                 <a href="{{ route('select.questionnaires.show', $questionnaire->id) }}">
                                     {{ $questionnaire->title }}
@@ -35,8 +35,14 @@
                         @endforeach
                     </ul>
                 @endif
-            @endsection
-
+            @endsection-->
+            @foreach($questionnaires as $questionnaire)
+                <div>
+                    <h3>{{ $questionnaire->title }}</h3>
+                    <p>{{ $questionnaire->description }}</p>
+                    <a href="{{ route('questionnaires.show', ['questionnaire' => $questionnaire->id]) }}">Select Questionnaire</a>
+                </div>
+            @endforeach
 
       </article>
     <!--  

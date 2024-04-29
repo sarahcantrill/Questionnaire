@@ -22,8 +22,9 @@ Route::resource('questionnaires', 'QuestionnaireController');
 //select questionnaire route
 //Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
 //Route::resource('questionnaires', 'QuestionnaireController');
-Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
-Route::get('/show-all-questionnaires', [QuestionnaireController::class, 'showAll'])->name('questionnaires.showAll');
-
+//Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
+//Route::get('/show-all-questionnaires', [QuestionnaireController::class, 'showAll'])->name('questionnaires.showAll');
+//route for select from tut
+Route::resource('select', 'SelectQuestionnaireController');
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );
