@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questionnaire;
+//use App\Questionnaire;
 
 class SelectQuestionnaireController extends Controller
 {
@@ -28,9 +29,12 @@ class SelectQuestionnaireController extends Controller
     public function index()
     {
         //get all the questionnaires 
-        $questionnaires = Questionnaire::all();
+        //$questionnaires = Questionnaire::all();
 
-        return view('createquestionnaire', ['questionnaires' => $questionnaires]);
+        //return view('createquestionnaire', ['questionnaires' => $questionnaires]);
+        $questionnaires = Questionnaire::all();
+        return view('selectquestionnaire', ['questionnaires' => $questionnaires]);
+
     }
 
     /**

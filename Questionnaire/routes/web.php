@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\SelectQuestionnaireController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +26,8 @@ Route::resource('questionnaires', 'QuestionnaireController');
 //Route::get('/show-all-questionnaires', [QuestionnaireController::class, 'showAll'])->name('questionnaires.showAll');
 //route for select from tut
 Route::resource('select', 'SelectQuestionnaireController');
+//Route::get('/selectquestionnaire', 'SelectQuestionnaireController@index')->name('selectquestionnaire.index');
+
+Route::get('/selectquestionnaire', [SelectQuestionnaireController::class, 'index'])->name('selectquestionnaire');
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );
