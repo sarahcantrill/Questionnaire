@@ -17,7 +17,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = DB::table('questions')->get();
+        $questions = DB::table('questions', 'question-text')->get();
 
         //return view('questions')-> with('questions', $questions);
         return view('questions', ['questions' => $questions]); 

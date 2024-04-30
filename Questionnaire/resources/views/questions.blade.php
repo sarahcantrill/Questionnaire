@@ -13,19 +13,23 @@
           <h1>Answer the Questionnaire!</h1>
           <form method="POST" action="{{ route('submit-responses) }}">
             @csrf
-            @foreach($questions as $questions)
-                <p> {{ $questions->id }}</p>
-                <p> {{ $questions->{'question-text'} }}</p>
-                @if($questions->question_type === 'text')
-                        <input type="text" name="answers[{{ $questions->id }}]"
+            @foreach($questions as $question)
+
+
+                <p> {{ $question->id }}</p>
+                <p>{{ $question->{'question-text'} }}</p>
+
+
+                @if($question->question_type === 'text')
+                        <input type="text" name="answers[{{ $question->id }}]"
                                class="question-input" placeholder="your answer here...">
-                    @elseif($questions->question_type === 'checkbox')
+                    @elseif($question->question_type === 'checkbox')
                         <!-- Example checkbox options (modify as needed) -->
-                        <input type="checkbox" name="answers[{{ $questions->id }}][]" value="option1"> Yes<br>
-                        <input type="checkbox" name="answers[{{ $questions->id }}][]" value="option2"> No<br>
-                    @elseif($questions->question_type === 'dropdown')
+                        <input type="checkbox" name="answers[{{ $question->id }}][]" value="option1"> Yes<br>
+                        <input type="checkbox" name="answers[{{ $question->id }}][]" value="option2"> No<br>
+                    @elseif($question->question_type === 'dropdown')
                         <!-- Example dropdown of numbers -->
-                        <select name="answers[{{ $questions->id }}]" class="questions-input">
+                        <select name="answers[{{ $question->id }}]" class="question-input">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -43,13 +47,13 @@
                             <option value="5">15</option>
                             <!-- Add more options as needed -->
                         </select>
-                    @elseif($questions->question_type === 'likert')
+                    @elseif($question->question_type === 'likert')
                         <!-- Example Likert scale (modify as needed) -->
-                        <label><input type="radio" name="answers[{{ $questions->id }}]" value="strongly_disagree"> Very Good</label><br>
-                        <label><input type="radio" name="answers[{{ $questions->id }}]" value="disagree"> Good</label><br>
-                        <label><input type="radio" name="answers[{{ $questions->id }}]" value="neutral"> Neutral</label><br>
-                        <label><input type="radio" name="answers[{{ $questions->id }}]" value="agree"> Bad</label><br>
-                        <label><input type="radio" name="answers[{{ $questions->id }}]" value="strongly_agree"> Very Bad</label><br>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="strongly_disagree"> Very Good</label><br>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="disagree"> Good</label><br>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="neutral"> Neutral</label><br>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="agree"> Bad</label><br>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="strongly_agree"> Very Bad</label><br>
                     @endif
                 
             @endforeach

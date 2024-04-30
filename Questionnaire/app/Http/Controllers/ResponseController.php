@@ -43,8 +43,14 @@ class ResponseController extends Controller
     {
                 // get all the responses 
                 //$selectresponses = Response::all(); // where id = the questionnaire id
+                // Retrieve all responses for the specified questionnaire ID
+                $responses = Response::where('questionnaire_id', $id)->get();
 
-                return view('questionnaireresponses');//, ['questionnaires' => $questionnaires]);
+                // Pass responses to the view along with the questionnaire ID
+                return view('questionnaireresponses', compact('id'));
+
+
+             //   return view('questionnaireresponses');//, ['questionnaires' => $questionnaires]);
     }
 
 }
