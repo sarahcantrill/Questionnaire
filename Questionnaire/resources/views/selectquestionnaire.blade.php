@@ -13,7 +13,7 @@
           <h1>Select a Questionnaire:</h1>
 
             @foreach($questionnaires as $questionnaire)
-                <p> ID: {{ $questionnaire->id }}</p>
+                <p> ID:{{ $questionnaire->id }}</p>
                 <p> {{ $questionnaire->title }}</p>
                 
             @endforeach
