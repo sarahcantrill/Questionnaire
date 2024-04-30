@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Response;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -15,8 +17,17 @@ class ResponseController extends Controller
     */
     public function index()
     {
+
+        //$responses = DB::table('responses')->get();
         // pass in list of all questionnaires
-        return view('responses');
+        //return view('responses', ['responses' => $responses]);
+
+        // Retrieve all responses using the Response model
+        $responses = Response::all();
+
+        // Pass the responses to the view
+        return view('responses', compact('responses'));
+
     }
 
 
@@ -53,13 +64,17 @@ class ResponseController extends Controller
                 // get all the responses 
                 //$selectresponses = Response::all(); // where id = the questionnaire id
                 // Retrieve all responses for the specified questionnaire ID
-                $responses = Response::where('questionnaire_id', $id)->get();
+                //$responses = Response::where('questionnaire_id', $id)->get();
 
                 // Pass responses to the view along with the questionnaire ID
-                return view('questionnaireresponses', compact('id'));
+                //return view('questionnaireresponses', compact('id'));
 
 
              //   return view('questionnaireresponses');//, ['questionnaires' => $questionnaires]);
+             $responses = Response::where('question_id', $id)->get();
+
+             // Pass responses and question ID to the view
+             return view('questionresponses', compact('responses', 'id'));
     }
 
 }

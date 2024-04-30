@@ -10,13 +10,14 @@
       <header class="row">
       </header>
       <article class="row">
-      <h1>Responses for Questionnaire : {{ $id ?? '' }}</h1>
+          <h1>Responses:</h1>
+          
+ 
+            @foreach( $responses as $response)
+                <a href="{{ route('responses.show', ['id' => $response->question->id]) }}">
+                <p>ID: {{ $response->question->id }}</p>
+                <p>{{ $response->question->question_text }}</p>
 
-          @foreach( $responses as $response)
-                <a href="{{ route('questions', ['id' => $questionnaire->id]) }}">
-                <p> ID:{{ $question->id }}</p>
-                <p>{{ $responses->{'response-text'} }}</p>
-                
             @endforeach
 
             

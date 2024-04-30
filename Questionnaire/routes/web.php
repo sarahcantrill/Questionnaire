@@ -41,5 +41,8 @@ Route::resource('responses', 'ResponseController');
 //store answeres
 Route::post('/submit-responses', [ResponseController::class, 'store'])->name('responses.store');
 
+//displays responses for specific id
+Route::get('/responses/{id}', [ResponseController::class, 'show'])->name('responses.show');
+
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );
