@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 //create questionnaire route
-Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
+//Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
 Route::resource('questionnaires', 'QuestionnaireController');
 
 //select questionnaire route
@@ -30,5 +30,16 @@ Route::get('/selectquestionnaire', [SelectQuestionnaireController::class, 'index
 //shows questions w the questionnaire clicked id
 //Route::get('questionnaire/{id}/questions', [QuestionController::class, 'showQuestions']);
 Route::get('/questions', [QuestionController::class, 'index'])->name('questions');
+
+//i cant remember what this does ngl
+Route::post('/save-questionnaire', 'QuestionnaireController@store')->name('save.questionnaire');
+
+
+
+
+Route::resource('responses', 'ResponseController');
+
+//store answeres
+//Route::post('/submit-responses', [ResponseController::class, 'store'])->name('submit.responses');
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );

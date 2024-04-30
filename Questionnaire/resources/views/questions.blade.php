@@ -11,7 +11,8 @@
       </header>
       <article class="row">
           <h1>Answer the Questionnaire!</h1>
-
+          <form method="POST" action="{{ route('submit-responses) }}">
+            @csrf
             @foreach($questions as $questions)
                 <p> {{ $questions->id }}</p>
                 <p> {{ $questions->{'question-text'} }}</p>

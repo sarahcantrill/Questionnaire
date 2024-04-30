@@ -76,6 +76,8 @@
                   
                     <a href="{{ route('selectquestionnaire') }}">Take a Questionnaire!</a>
                     <a href= "{{ route('questionnaires.create') }}">Create a Questionnaire!</a>
+                    <a href= "{{ route('responses.index') }}">Show Responses</a>
+            
                 </div>
             </div>
         </div>
