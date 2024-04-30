@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Question;
+use App\Questionnaire;
+use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
@@ -13,7 +17,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = DB::table('questions')->get();
+
+        return view('questions')-> with('questions', $questions);
     }
 
     /**
@@ -23,7 +29,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('questions');
     }
 
     /**
@@ -34,7 +40,11 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        results::create($input);
+
+        return redirect ('questions');
     }
 
     /**

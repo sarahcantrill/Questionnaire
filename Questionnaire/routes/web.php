@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\SelectQuestionnaireController;
+use App\Http\Controllers\QuestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,14 +21,14 @@ Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController
 Route::resource('questionnaires', 'QuestionnaireController');
 
 //select questionnaire route
-//Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
-//Route::resource('questionnaires', 'QuestionnaireController');
-//Route::resource('/resources/views/selectquestionnaire', 'SelectQuestionnaireController' );
-//Route::get('/show-all-questionnaires', [QuestionnaireController::class, 'showAll'])->name('questionnaires.showAll');
 //route for select from tut
 Route::resource('select', 'SelectQuestionnaireController');
 //Route::get('/selectquestionnaire', 'SelectQuestionnaireController@index')->name('selectquestionnaire.index');
 
 Route::get('/selectquestionnaire', [SelectQuestionnaireController::class, 'index'])->name('selectquestionnaire');
+
+//shows questions w the questionnaire clicked id
+//Route::get('questionnaire/{id}/questions', [QuestionController::class, 'showQuestions']);
+Route::get('/questions', [QuestionController::class, 'index'])->name('questions');
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );

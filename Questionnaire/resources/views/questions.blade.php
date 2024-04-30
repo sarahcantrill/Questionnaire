@@ -13,9 +13,9 @@
           <h1>Select a Questionnaire:</h1>
 
             @foreach($questionnaires as $questionnaire)
-                <a href="{{ route('questions', ['id' => $questionnaire->id]) }}">
-                <p> ID:{{ $questionnaire->id }}</p>
-                <p> {{ $questionnaire->title }}</p>
+                <p> {{ $questionnaire->id }}</p>
+                <p> {{ $questions->question-text }}</p>
+               
                 
             @endforeach
 

@@ -17,13 +17,6 @@ class SelectQuestionnaireController extends Controller
      */
     public function index()
     {
-        //get all the questionnaires 
-        //$questionnaires = Questionnaire::all();
-
-       // return view('selectquestionnaire', ['questionnaire' => $questionnaire]);
-      //  $questionnaire = Questionnaire::all();
-        //return view('selectquestionnaire', ['questionnaire' => $questionnaire]);
- 
 
         $questionnaires = DB::table('questionnaire')->get();
 
