@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('questionnaire_id');
             $table->string('question-text');
+            $table->string('question_type')->nullable();
             $table->timestamps();
 
             //defining the questionnaire id as the foreign key for the question table

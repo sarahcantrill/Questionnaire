@@ -57,7 +57,7 @@
 
             <div class="form-group">
                 {!! Form::submit('Add Questionnaire !', ['class' => 'btn btn-primary form-control']) !!}
-            </div
+            </div>
 
           {!! Form::close() !!}
 

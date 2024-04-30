@@ -19,7 +19,8 @@ class QuestionController extends Controller
     {
         $questions = DB::table('questions')->get();
 
-        return view('questions')-> with('questions', $questions);
+        //return view('questions')-> with('questions', $questions);
+        return view('questions', ['questions' => $questions]); 
     }
 
     /**
