@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\SelectQuestionnaireController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ResponseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,12 +36,10 @@ Route::get('/questions', [QuestionController::class, 'index'])->name('questions'
 //i cant remember what this does ngl
 Route::post('/save-questionnaire', 'QuestionnaireController@store')->name('save.questionnaire');
 
-
-
-
 Route::resource('responses', 'ResponseController');
 
 //store answeres
-//Route::post('/submit-responses', [ResponseController::class, 'store'])->name('submit.responses');
+Route::post('/submit-responses', [ResponseController::class, 'store'])->name('responses.store');
+
 
 //Route::resource('/admin/questionnaire', 'QuestionnaireController' );

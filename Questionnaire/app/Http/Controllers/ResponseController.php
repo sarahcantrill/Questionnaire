@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Response;
 
 
+
 class ResponseController extends Controller
 {   /**
     * Display a listing of the resource.
@@ -22,15 +23,23 @@ class ResponseController extends Controller
 
     public function store(Request $request)
     {
-        foreach ($request->responses as $question_id => $responses) {
-            // Create a new response instance
-            $responses = new Response();
-            $responses->question_id = $question_id;
-            $responses->answer = $answer;
-            $responses->save();
+        // Validate and process the form data
+        $data = $request->validate([
+            'answers' => 'required|array',
+            // Add specific validation rules based on your form fields
+        ]);
+
+        // Process and store each response
+        foreach ($data['answers'] as $questionId => $answer) {
+            // Create a new Response model instance
+            $response = new Response();
+            $response->question_id = $questionId;
+            $response->response_text = $answer; // Assuming response_text is the field name
+            $response->save();
         }
 
-        return redirect()->back()->with('Questionnaire submitted!');
+        // Redirect back with a success message
+        return redirect()->back()->with('Responses submitted successfully!');
     }
 
     /**
