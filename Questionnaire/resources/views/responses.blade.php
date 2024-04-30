@@ -13,7 +13,7 @@
           <h1>Responses:</h1>
           
  
-            @foreach( $responses as $response)
+            @foreach( $responses->unique('question_id')  as $response)
                 <a href="{{ route('responses.show', ['id' => $response->question->id]) }}">
                 <p>ID: {{ $response->question->id }}</p>
                 <p>{{ $response->question->question_text }}</p>
