@@ -25,6 +25,9 @@
                 color: black;
                 text-transform: uppercase;
                 border: 1px black;
+                padding-top: 10px;
+                padding-left: 10px;
+                text-transform: uppercase;
             }
 
             .row {
@@ -64,7 +67,7 @@
             @foreach($questionnaires as $questionnaire)
                 <section class="box">
                 <a href="{{ route('questions', ['id' => $questionnaire->id]) }}">
-                <p class="p-inline">{{ $questionnaire->id }} </p> 
+                <p class="p-inline">{{ $questionnaire->id }} </p>
                 <p class="p-inline"> {{ $questionnaire->title }}</p>
                 <br>
                 </a>
