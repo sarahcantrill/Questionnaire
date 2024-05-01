@@ -11,6 +11,7 @@
     </header>
     <article class="row">
         <h1>Answer the Questionnaire!</h1>
+        <a href="{{ route('welcome') }}" class="btn btn-secondary">Return to Home</a>
         <form method="POST" action="{{ route('responses.store') }}">
             @csrf
             @foreach($questions as $question)

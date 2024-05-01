@@ -2,6 +2,7 @@
   <html>
   <head>
       <meta charset="UTF-8">
+      <a href="{{ route('welcome') }}" class="btn btn-secondary">Home</a>
       <title>Select a Questionnaire !</title>
       <!-- <link rel="stylesheet" href="/css/app.css" /> -->
   </head>

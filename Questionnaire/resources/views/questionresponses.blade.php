@@ -13,7 +13,7 @@
         <h1>Responses for Question ID: {{ $id }}</h1>
 
         @foreach($responses as $response)
-            <p>Response Text: {{ $response->{'response-text'} }}</p>
+            <p>Response: {{ $response->{'response-text'} }}</p>
             <!-- Add more fields as needed -->
         @endforeach
 

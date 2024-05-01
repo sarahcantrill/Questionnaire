@@ -16,7 +16,10 @@ use App\Http\Controllers\ResponseController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+    })->name('welcome');
+
+
+//Route::get('/', '')->name('home');
 
 //create questionnaire route
 //Route::resource('/resources/views/createquestionnaire', 'QuestionnaireController' );
